@@ -1,5 +1,8 @@
 ## Bypass-Android-SSL-Pinning
 
+
+### Works on applications which implements ssl pinning using network security config method
+
 First pull the android application using adb
 
 ```

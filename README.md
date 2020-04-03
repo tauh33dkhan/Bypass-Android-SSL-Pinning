@@ -1,18 +1,18 @@
 ## Bypass-Android-SSL-Pinning
 
-
 First pull the android application using adb
 
-`bash
+`
 $ adb pull ./pathto/test.apk
 `
+
 Decompile the application using apktool
 
-`bash
+`
 $ apktool d test.apk
 `
 
-Now edit the network_security_config.xml file in /base/res/xml/network_security_config.xml
+Now edit the `network_security_config.xml` file in `/base/res/xml/network_security_config.xml`
 
 network_security_config.xml
 ```xml
@@ -28,7 +28,7 @@ network_security_config.xml
     </domain-config>
 </network-security-config>
 ```
-Now remove `<ping-set>...</pin-set> and add the `trust-anchors`tag and make it look like below
+Now remove `<ping-set>...</pin-set>` and add the `trust-anchors`tag and make it look like below
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,24 +45,25 @@ Now remove `<ping-set>...</pin-set> and add the `trust-anchors`tag and make it l
 ```
 now cd to application root directory and build the application again using apktool
 
-`bash
+`
 $ apktool b ./
 `
+
 apktool will save the new modified apk in `dist` directory, Now use the keytool to generate the private key 
 
-`bash
+`
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 `
 
 Now sign the modified application with the generated private key using jarsigner
 
-`bash
+`
 $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore test.apk alias_name
-
 `
 
 Now uninstall the old application from the device and install the new application
-`bash
+
+`
 $ adb install test.apk
 `
 

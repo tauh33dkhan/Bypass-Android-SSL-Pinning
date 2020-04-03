@@ -88,3 +88,7 @@ $ adb install test.apk
 ```
 
 Done! now you can intercept the request with burp
+
+#### Contact me
+
+[@tauh33dkhan](https://twitter.com/tauh33dkhan)

@@ -22,8 +22,8 @@ network_security_config.xml
         <domain includeSubdomains="true">api.testingdomain.com</domain>
         <domain includeSubdomains="true">staging-api.testingdomain.com</domain>
         <pin-set>
-            <pin digest="SHA-256">YyKlrbMBaYz9z5JY/8ZhpoXhUJY9ZZUycEPcDoU7w2s=</pin>
-            <pin digest="SHA-256">AoqlvZFWR5AIpe/sDL0AvjqxtHCydEHF0WdTRitLKCY=</pin>
+            <pin digest="SHA-256">YyKlrbMBaYz9er5JY/8asdfhpoXhUJY9ZZUycEPcDoU7w2s=</pin>
+            <pin digest="SHA-256">AoqlvZFWR5AIer/asdfDL0AvjqxtHCydEHF0WdTRitLKCY=</pin>
         </pin-set>
     </domain-config>
 </network-security-config>

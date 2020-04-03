@@ -28,7 +28,7 @@ network_security_config.xml
     </domain-config>
 </network-security-config>
 ```
-Now remove `<ping-set>...</pin-set>` and add the `trust-anchors`tag and make it look like below
+Now remove `<pin-set>...</pin-set>` and add the `trust-anchors`tag and make it look like below
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

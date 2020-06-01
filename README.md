@@ -13,7 +13,7 @@ Decompile the application using apktool
 $ apktool d test.apk
 ```
 
-Now edit the `network_security_config.xml` file in `/base/res/xml/network_security_config.xml`
+Edit the `network_security_config.xml` file in `/base/res/xml/network_security_config.xml`
 
 network_security_config.xml
 ```xml
@@ -29,7 +29,7 @@ network_security_config.xml
     </domain-config>
 </network-security-config>
 ```
-Now remove `<pin-set>...</pin-set>` and add the `trust-anchors`tag and make it look like below
+Remove `<pin-set>...</pin-set>` and add the `trust-anchors`tag and make it look like below
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -44,7 +44,7 @@ Now remove `<pin-set>...</pin-set>` and add the `trust-anchors`tag and make it l
     </domain-config>
 </network-security-config>
 ```
-now cd to application root directory and build the application again using apktool
+cd to application root directory and build the application again using apktool
 
 ```
 $ apktool b ./
@@ -76,13 +76,13 @@ Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) wi
 [Storing my-release-key.keystore]
 ```
 
-Now sign the modified application with the generated private key using jarsigner
+Sign the modified application with the generated private key using jarsigner
 
 ```
 $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore test.apk alias_name
 ```
 
-Now uninstall the old application from the device and install the new application
+Uninstall the old application from the device and install the new application
 
 ```
 $ adb install test.apk

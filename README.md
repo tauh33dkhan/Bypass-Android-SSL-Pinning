@@ -1,7 +1,7 @@
 ## Bypass-Android-SSL-Pinning
 
 
-First pull the android application using adb
+First pull the android application from your device using adb
 
 ```
 $ adb pull ./pathto/test.apk
@@ -13,7 +13,7 @@ Decompile the application using apktool
 $ apktool d test.apk
 ```
 
-Edit the `network_security_config.xml` file in `/base/res/xml/network_security_config.xml`
+Edit the `network_security_config.xml` file in `/base/res/xml` directory
 
 network_security_config.xml
 ```xml
@@ -50,7 +50,7 @@ cd to application root directory and build the application again using apktool
 $ apktool b ./
 ```
 
-apktool will save the new modified apk in `dist` directory, Now use the keytool to generate the private key 
+apktool will save the new modified apk in `dist` directory, Now generate the private key using keytool.
 
 ```
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
@@ -88,7 +88,7 @@ Uninstall the old application from the device and install the new application
 $ adb install test.apk
 ```
 
-Done! now you can intercept the request with burp
+Done! now you can intercept the request with burpsuite.
 
 #### Contact me
 
